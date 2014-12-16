@@ -93,8 +93,9 @@ library(Rcpp)
 cpp<-sourceCpp("dfdst.cpp")
 
 #Data <-read.delim("ALL.table", header=T, row.names=1)
-
-vector <- dfDst(Data)
+gc()
+#vector <- dfDst(Data)
+vector <- dfDst(data.matrix(Data))
 dim_data <- dim (Data)
 
 mat <- matrix(0,nc=dim_data[1],nr=dim_data[2])
